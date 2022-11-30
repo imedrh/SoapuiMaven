@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f531d5ee-af5c-4fec-84da-7760b5b0e30b" activeEnvironment="Default" name="TUTORIAL API REST Project" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+	<con:settings />
+	<con:interface xsi:type="con:RestService" id="0d00ded6-341d-4492-a55d-8e62dbdc97cf" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://petstore.swagger.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<con:settings />
+		<con:definitionCache type="TEXT" rootPart="" />
+		<con:endpoints>
+			<con:endpoint>http://petstore.swagger.io</con:endpoint>
+		</con:endpoints>
+		<con:resource name="Swagger.json" path="/v2/swagger.json" id="c13c6a33-8f79-4d2c-8196-19b77dbf620a">
+			<con:settings />
+			<con:parameters />
+			<con:method name="Swagger.json 1" id="52e69446-9dda-4b27-8061-81f794fc1632" method="GET">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element xmlns:swag="https://petstore.swagger.io/v2/swagger.json">swag:Response</con:element>
+				</con:representation>
+				<con:request name="Request 1" id="793dcbdc-3513-4874-a28d-8c1057e0346f" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>http://petstore.swagger.io</con:endpoint>
+					<con:request />
+					<con:originalUri>https://petstore.swagger.io/v2/swagger.json</con:originalUri>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+	</con:interface>
+	<con:testSuite id="c5646ce3-9006-40fc-9dbf-8f49b28d8574" name="TestSuite 1">
+		<con:settings />
+		<con:runType>SEQUENTIAL</con:runType>
+		<con:testCase id="fc3ee5e7-b972-4504-9d69-afa2e58dd419" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+			<con:settings />
+			<con:testStep type="restrequest" name="Swagger.json 1 - Request 1" id="19c3500b-04cf-4ed8-bd08-d44ff67cf337">
+				<con:settings />
+				<con:config service="http://petstore.swagger.io" resourcePath="/v2/swagger.json" methodName="Swagger.json 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:restRequest name="Swagger.json 1 - Request 1" id="793dcbdc-3513-4874-a28d-8c1057e0346f" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>http://petstore.swagger.io</con:endpoint>
+						<con:request />
+						<con:originalUri>https://petstore.swagger.io/v2/swagger.json</con:originalUri>
+						<con:assertion type="Simple Contains" id="d7492ef5-aad5-4f8a-86a4-c6648f77bca9" name="Contains">
+							<con:configuration>
+								<token>Petstore</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+						<con:jmsPropertyConfig />
+						<con:parameters />
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:properties />
+		</con:testCase>
+		<con:properties />
+	</con:testSuite>
+	<con:properties />
+	<con:wssContainer />
+	<con:oAuth2ProfileContainer />
+	<con:oAuth1ProfileContainer />
+	<con:sensitiveInformation />
+</con:soapui-project>
